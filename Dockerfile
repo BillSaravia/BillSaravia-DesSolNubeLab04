@@ -1,7 +1,13 @@
-FROM node
-LABEL maintainer bill.saravia@tecsup.edu.pe
+FROM node:latest
+
 RUN git clone -q https://github.com/BillSaravia/BillSaravia-DesSolNubeLab04.git
-WORKDIR /
+
+WORKDIR /BillSaravia-DesSolNubeLab04
+
+RUN rm -rf node_modules
+
 RUN npm install
+
 EXPOSE 9000
-CMD ["npm","start"]
+
+CMD ["npm", "start"]
